@@ -143,67 +143,138 @@ a {
 /* ### TODO ### Styles for Main Component */
 
 .main {
-
-display: grid;
-grid-template-columns: 1fr  1fr;
-grid-column-gap: 20px;
-
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 8px;
 }
 
+.discovery__title {
+  grid-column: 1 / span 2; /* Das Element erstreckt sich über beide Spalten */
+  grid-row: 1; /* Element in der ersten Zeile positionieren */
+}
 
+.discovery__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5px;
+  grid-column: 1 / span 2; /* Das Element erstreckt sich über beide Spalten */
+  grid-row: 2; /* Element in der zweiten Zeile positionieren */
+}
+
+.discovery__taglist {
+  grid-column: 1; /* Element in der ersten Spalte positionieren */
+  grid-row: 1; /* Element in der ersten Zeile positionieren */
+}
+
+.discovery__map {
+  grid-column: 2; /* Element in der zweiten Spalte positionieren */
+  grid-row: 1 / span 2; /* Das Element erstreckt sich über zwei Zeilen */
+}
 
 /* ### TODO ### Styles for Tagging component */
 
-/* Fügen Sie diese CSS-Regeln in Ihre externe CSS-Datei ein oder in den <style> Abschnitt Ihrer HTML-Datei ein */
-
-
 .tagging-fieldset {
-    border: 1px solid #ccc; /* Rand um das Formularfeld */
-    border-radius: 5px; /* Abrundung der Ecken */
-    padding: 20px; /* Innenabstand */
-    background-color: #f9f9f9; /* Hintergrundfarbe des Formularfelds */
-    margin-left: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  margin-left: 20px;
+  margin-top: 20px;
 }
 
 .tagging-legend {
-    font-weight: bold; /* Fettgedruckte Überschrift für das Formularfeld */
-    font-size: 15px;
-    margin-left: 0px;
+  font-weight: bold;
+  font-size: 15px;
+  margin-left: 0px;
 }
 
 .tagging-label {
-    display: block; /* Jedes Label auf eine neue Zeile setzen */
-    margin-top: 10px; /* Abstand zwischen den Labels */
+  display: block;
+  margin-top: 10px;
 }
 
 .tagging-input[type="text"] {
-    width: 100%; /* Formulareingabefelder auf die volle Breite des Formulars ausdehnen */
-    padding: 10px; /* Innenabstand der Eingabefelder */
-    border: 1px solid #ccc; /* Rand um die Eingabefelder */
-    border-radius: 3px; /* Abrundung der Ecken der Eingabefelder */
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
 }
 
 .tagging-input-submit[type="submit"] {
-    background-color: #007bff; /* Hintergrundfarbe der Submit-Schaltfläche */
-    color: #fff; /* Textfarbe der Submit-Schaltfläche */
-    border: none; /* Kein Rand um die Schaltfläche */
-    padding: 10px 20px; /* Innenabstand der Schaltfläche */
-    border-radius: 3px; /* Abrundung der Ecken der Schaltfläche */
-    cursor: pointer; /* Zeiger-Cursor beim Überfahren der Schaltfläche */
-    margin-top: 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 20px;
 }
 
 .tagging__title {
-    margin-top: 20px; /* Hier können Sie den gewünschten Abstand festlegen */
-    margin-left: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
 }
-
-/* Weitere Anpassungen nach Bedarf */
-
 
 /* ### TODO ### Styles for Discovery component */
 
-/* ... your code here ... */
+.discovery-fieldset {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.discovery-legend {
+  font-weight: bold;
+  font-size: 15px;
+  margin-left: 0px;
+}
+
+.discovery-label {
+  display: block;
+  margin-top: 10px;
+}
+
+.discovery-input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.discovery-input-submit[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.discovery__title {
+  margin-top: 20px;
+  margin-left: 0px;
+  margin-bottom: 15px;
+}
+
+.discovery__taglist {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #00FFFF;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.discovery__map {
+  margin-top: 20px;
+}
+
+
+
 
 
 /* ### TODO ### Styles for Footer Component */
@@ -229,4 +300,43 @@ main {
 
 /* ### TODO ### Media Queries */
 
-/* ... your code here ... */
+/* Media Query für kleine Bildschirme (z.B. Handys) */
+@media screen and (max-width: 768px) {
+
+
+.discovery-fieldset{
+
+  margin-left: 20px;
+
+  }
+
+.discovery__title {
+
+    margin-left: 20px;
+
+}
+
+
+.tagging-fieldset {
+
+    margin-right: 20px;
+
+}
+
+  .main {
+    display: block; /* Ändert das Raster in ein blockbasiertes Layout */
+  }
+
+  .discovery__wrapper {
+    grid-column: 1 / span 2; /* Das Element erstreckt sich über beide Spalten */
+    grid-row: 2; /* Element in der zweiten Zeile positionieren */
+  }
+
+  .discovery__map {
+    grid-column: 1 / span 2; /* Das Element erstreckt sich über beide Spalten */
+    grid-row: 3; /* Element in der dritten Zeile positionieren (unter den Ergebnissen) */
+  }
+
+  /* Fügen Sie hier weitere Anpassungen für mobile Geräte hinzu */
+}
+
